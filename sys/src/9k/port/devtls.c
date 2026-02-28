@@ -1255,7 +1255,8 @@ tlsrecwrite(TlsRec *tr, int type, Block *b)
 if(tr->debug)pprint("send %ld\n", BLEN(b));
 if(tr->debug)pdump(BLEN(b), b->rp, "sent:");
 
-
+	if(type == RApplication)
+		checkstate(tr, 0, SOpen);
 	ok = SHandshake|SOpen|SRClose;
 	if(type == RAlert)
 		ok |= SAlert;
@@ -1372,7 +1373,6 @@ tlsbwrite(Chan *c, Block *b, vlong offset)
 		tr->handout += n;
 		break;
 	case Qdata:
-		checkstate(tr, 0, SOpen);
 		tlsrecwrite(tr, RApplication, b);
 		tr->dataout += n;
 		break;
