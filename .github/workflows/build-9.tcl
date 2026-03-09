@@ -15,11 +15,9 @@ send "tcp\r"
 
 # Build sources
 expect "term% "
-send "cd /sys/src\r"
+send "cd /sys/src/9\r"
 expect "term% "
-send "objtype=386 mk all\r"
-send "objtype=amd64 mk all\r"
-send "objtype=arm mk all\r"
+send "objtype=mk all\r"
 #expect "term% "
 #send "mk release clean\r"
 

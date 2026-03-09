@@ -17,6 +17,6 @@ jobs:
         gh release download --pattern=x86.tar.gz
         tar zxf x86.tar.gz
         rm -f x86.tar.gz
-        ./.github/workflows/build.tcl
+        ./.github/workflows/build-9.tcl
       env:
         GH_TOKEN: ${{ github.token }}

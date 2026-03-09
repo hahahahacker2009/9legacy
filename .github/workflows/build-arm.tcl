@@ -1,6 +1,6 @@
 #!/usr/bin/expect
 
-set timeout 20
+set timeout 300
 spawn sh boot/qemu -ci
 #exp_internal 1
 
