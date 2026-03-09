@@ -1,4 +1,4 @@
-name: Build
+name: Build 386 cmd and libs
 
 on:
   pull_request:

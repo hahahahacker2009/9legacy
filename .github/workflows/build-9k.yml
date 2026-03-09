@@ -1,4 +1,4 @@
-name: Build
+name: Build 9k kernels
 
 on:
   pull_request:

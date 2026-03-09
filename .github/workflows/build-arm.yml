@@ -1,4 +1,4 @@
-name: Build
+name: Build arm cmd and libs
 
 on:
   pull_request:
