@@ -17,7 +17,7 @@ send "tcp\r"
 expect "term% "
 send "cd /sys/src\r"
 expect "term% "
-send "objtype=arm mk all clean cleanlibs\r"
+send "objtype=arm mk all\r"
 # you must have separate workflows for each arch :)
 #expect "term% "
 #send "mk release clean\r"
