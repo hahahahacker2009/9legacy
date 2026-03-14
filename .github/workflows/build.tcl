@@ -1,6 +1,6 @@
 #!/usr/bin/expect
 
-set timeout 20
+set timeout 600
 spawn sh boot/qemu -ci
 #exp_internal 1
 
@@ -17,7 +17,11 @@ send "tcp\r"
 expect "term% "
 send "cd /sys/src\r"
 expect "term% "
-send "objtype=386 mk libs cleanlibs\r"
+send "objtype=386 mk all || echo -n failed\r"
+expect "term% "
+send "cd /sys/src/9/pc\r"
+send "objtype=386 mk all || echo -n failed\r"
+
 #expect "term% "
 #send "mk release clean\r"
 
